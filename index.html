@@ -6,17 +6,36 @@
 </head>
 <body>
 <script type="module">
-  import { apiCaller } from './dist/bundle.js';
+  import { apiCaller, apiCallerAbort } from './dist/index.js';
 
   var testPromise = () => new Promise((resolve) => {
+    // doesn't work with setTimeout
     setTimeout(() => {
       resolve('ALO')
     }, 2000)
   });
 
-  apiCaller(testPromise).then((result) => {
-    console.log('done', result)
-  })
+  function start() {
+    apiCaller(testPromise).then((result) => {
+      console.log('done', result)
+    }).catch((e) => {
+      console.log('canceled', e)
+    });
+  }
+
+  function stop() {
+    apiCallerAbort()
+  }
+
+  document.getElementById('start').addEventListener('click', start);
+
+  document.getElementById('stop').addEventListener('click', stop);
 </script>
+<button id="start">
+    start
+</button>
+<button id="stop">
+    stop
+</button>
 </body>
 </html>

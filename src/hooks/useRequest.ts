@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { ApiCallerAbortType, ApiCallerType, apiCaller, apiCallerAbort } from 'src/index';
+import { ApiCallerAbortType, ApiCallerType, apiCaller, apiCallerAbort } from 'src/apiCaller';
 
 export type ApiRequestCallerType = {
   abort: ApiCallerAbortType;

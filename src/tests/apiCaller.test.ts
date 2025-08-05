@@ -1,4 +1,4 @@
-import { apiCaller, apiCallerAbort, DEV_PROMISE_MAP as rawPromiseMap } from 'src/index';
+import { apiCaller, apiCallerAbort, DEV_PROMISE_MAP as rawPromiseMap } from 'src/apiCaller';
 import { SafeAnyType } from 'src/utils/safeAny';
 
 // it exists for the test environment

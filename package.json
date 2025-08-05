@@ -1,15 +1,15 @@
 {
   "name": "@slayermass/api-caller",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "types": "dist/types/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
-    "buildBrowser": "esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm --platform=browser && npm run postReplacer",
-    "buildNode": "esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm --platform=node && npm run postReplacer",
     "postReplacer": "node postReplacer.js",
+    "buildBrowser": "esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm --platform=browser && npm run postReplacer",
     "test": "jest --runInBand",
-    "build:types": "tsc -p .\\tsconfig.types.json"
+    "build:types": "tsc -p .\\tsconfig.types.json",
+    "publish": "npm publish --access public"
   },
   "exports": {
     ".": {
