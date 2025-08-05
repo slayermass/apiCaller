@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Test</title>
+</head>
+<body>
+<script type="module">
+  import { apiCaller } from './dist/bundle.js';
+
+  var testPromise = () => new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('ALO')
+    }, 2000)
+  });
+
+  apiCaller(testPromise).then((result) => {
+    console.log('done', result)
+  })
+</script>
+</body>
+</html>
