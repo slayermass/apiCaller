@@ -6,8 +6,8 @@
   "main": "dist/index.js",
   "scripts": {
     "postReplacer": "node postReplacer.js",
-    "buildBrowser": "esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm --platform=browser && npm run postReplacer",
     "test": "jest --runInBand",
+    "build": "esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm --platform=browser && npm run postReplacer",
     "build:types": "tsc -p .\\tsconfig.types.json",
     "publish": "npm publish --access public"
   },
